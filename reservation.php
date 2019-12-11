@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Planning</title>
+	<title>Reservation</title>
 	<link rel="stylesheet" type="text/css" href="reservation.css">
 </head>
 <body>
