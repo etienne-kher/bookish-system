@@ -15,7 +15,7 @@
 			}
 		?>
 		<a href="index.php">index</a>
-		<a href="reservation.php">reservation</a>
+		<a href="reservation-form.php">reservation</a>
 		<a href="planning.php">planning</a>
 		
 	</nav>

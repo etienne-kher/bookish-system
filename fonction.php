@@ -1,8 +1,9 @@
 <?php 
 function sql($sql)
-{
+{	
 	$bd=mysqli_connect("localhost","root","","reservationsalles");
 	$envoit=mysqli_query($bd,$sql);
+
 	if($sql[0]=="S"||$sql[0]=="s")
 	{	
 		$reception = mysqli_fetch_all($envoit);

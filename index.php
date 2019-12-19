@@ -10,6 +10,7 @@ if(isset($_GET['deco']))
 <html>
 <head>
 	<title>Index</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="reservation.css">
 </head>
 <body>
