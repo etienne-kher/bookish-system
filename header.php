@@ -1,22 +1,28 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="reservation.css">
+
+</head>
 <header>
 	<nav id="header-nav">
-		<?php 
+		<a href="index.php">Index</a>
+		<a href="planning.php">Planning</a>
+		<?php
 		if(isset($_SESSION['login']))
-			{?>
-				<a href="profil.php">profil</a>
-				<a href="index.php?deco=true">deconnexion</a>
+			{/*conecté*/?>
+				<a href="reservation-form.php">Réservation</a>
+				<a href="profil.php">Profil</a>
+				<a href="index.php?deco=true">Déconnexion</a>
 			<?php
 			}
 			else
-			{?>
-				<a href="inscription.php">inscription</a>
-		<a href="connexion.php">connexion</a>
+			{ /*pas connecter */?>
+				<a href="inscription.php">Inscription</a>
+		<a href="connexion.php">Connexion</a>
+
 			<?php
 			}
 		?>
-		<a href="index.php">index</a>
-		<a href="reservation-form.php">reservation</a>
-		<a href="planning.php">planning</a>
-		
+
+
 	</nav>
 </header>

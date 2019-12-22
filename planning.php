@@ -5,62 +5,70 @@
 	<title>Planning</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="reservation.css">
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P|Russo+One&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body id="bodyplanning">
 	<?php include('header.php') ?>
+
+<main id="maintab">
+
 	<?php
-		
+
 		if(!isset($_GET['w']))
 		{	$w=date('W');
 			header("Location: planning.php?w=$w");
 		}
 		else
-		{	
+		{
 			$sem=$_GET['w'];
 			$ann=date('Y');
 			$tab=sql("SELECT reservations.id,titre,login,debut,fin FROM `reservations`INNER JOIN utilisateurs on reservations.id_user=utilisateurs.id WHERE (DATE_FORMAT(debut,'%u')='".$sem."'and DATE_FORMAT(debut,'%Y')='".$ann."' )or (DATE_FORMAT(fin,'%u')='".$sem."' and DATE_FORMAT(fin,'%Y')='".$ann."') ORDER BY `debut` ");
 			$wav=$_GET['w']-1;
 			$wap=$_GET['w']+1;
+			$moi=date('F');
+			echo "<h1>Semaine :".$sem." de l'année ".$ann."  ".$moi."</h1>";
 		}
-		
+
 	?>
-	<table>
+
+	<table class='tableaureservation'>
 		<tr>
 			<th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th>
-		</tr>		
+		</tr>
 		<?php
-		    for ($h=8; $h <19; $h++)  
+		    for ($h=8; $h <19; $h++)
 			{ ?>
 				<tr>
-				<?php	
-				for ($j=1; $j <6; $j++) 
-				{ ?> 
+				<?php
+				for ($j=1; $j <6; $j++)
+				{ ?>
 					<td>
 						<?php
 						if(empty($tab))
 						{ ?><div class="vide">
 								<p class="heur"> <?php echo $h; ?> h</p>
-							</div>	
+							</div>
 						<?php }
 						else
 						{
-							foreach ($tab as $key ) 
+							foreach ($tab as $key )
 							{
 							 	if(date("N",strtotime($key[3]))==$j && date("G",strtotime($key[3]))<=$h && date("G",strtotime($key[4]))>$h)
 							 	{
-							 		$hor=true; 	
-							 		break;	
+							 		$hor=true;
+							 		break;
 							 	}
 							 	else
 							 	{
 							 		$hor=false;
 							 	}
-							 	
+
 							}
-							if(isset($hor) && $hor==false) 
+							if(isset($hor) && $hor==false)
 							{ ?><div class="vide">
 							 		<p class="heur"> <?php echo $h; ?>h</p>
-							 	</div>	
+							 	</div>
 							<?php }
 							else
 							{ ?>
@@ -74,11 +82,16 @@
 						?>
 					</td>
 			<?php } ?>
-				</tr>	
+				</tr>
 		<?php } ?>
-	</table>
+
+	<div class="tableaureservation">
+
 	<a href="planning.php?w=<?php echo $wav ?>">Semaine précédente</a>
 	<a href="planning.php?w=<?php echo $wap ?>">Semaine suivante</a>
+</div>
+</table>
+</main>
 	<?php include('footer.php') ?>
 </body>
 </html>

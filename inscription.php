@@ -5,7 +5,7 @@
 		header("Location: index.php");
 	}
 	if(isset($_POST['inscr']))
-	{	if (strlen($_POST['login'])==0 || strlen($_POST['mdp'])==0) 
+	{	if (strlen($_POST['login'])==0 || strlen($_POST['mdp'])==0)
 		{
 			$err="<p id='err'>bien essayé hackerman</p>";
 		}
@@ -36,22 +36,35 @@
 	<title>Inscription</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="reservation.css">
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P|Russo+One&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body id='bodyinscription'>
+
+
 	<?php include('header.php') ?>
-		<form action="Inscription.php" method="post">
-			<label>Login :</label><input type="text" name="login" required>
-			<label></label><input type="password" name="mdp" required>
-			<label></label><input type="password" name="remdp" required>
-			<input type="submit" name="inscr">
-		</form>
+	<section id="sec-inscr">
+	<div id="inscriptionreservationform">
+
+		<form action="Inscription.php" method="post"  id="form-inscr">
+			<div class="aling"><label>Login :</label><input type="text" name="login" required></div>
+			<div class="aling"><label>Mot de Passe :</label><input type="password" name="mdp" required> </div>
+			<div class="aling"><label>Cofirmation :</label><input type="password" name="remdp" required></div>
+
+
+			<input class="buttonOK" type="submit" name="inscr">
+			</div>
+			</form>
+
+<br>
 	<?php
 		 if(isset($err))
 		{
 			echo $err;
 		}
 	?>
+	</div>
+</section>
 	<?php include('footer.php') ?>
 </body>
 </html>
-

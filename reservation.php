@@ -4,10 +4,13 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Reservation</title>
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P|Russo+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="reservation.css">
 </head>
-<body>
+<body id="bodyreservation4">
 	<?php include('header.php') ?>
+	<div id="reponseformulaire">
+
 	<?php
 		if(empty($_GET['res']))
 		{
@@ -30,8 +33,10 @@
 					<p>Heure de fin: <?php echo $hf; ?> h</p>
 				</section>
 			</main>
-		<?php } 
+		<?php }
 	?>
+</div>
+
 	<?php include('footer.php') ?>
 </body>
 </html>
