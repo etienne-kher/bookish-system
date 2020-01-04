@@ -17,17 +17,34 @@
 
 		if(!isset($_GET['w']))
 		{	$w=date('W');
-			header("Location: planning.php?w=$w");
+			$ann=date('Y');
+			header("Location: planning.php?w=$w&ann=$ann");
 		}
 		else
 		{
+			//bug lié au zero manquant quand w <10
 			$sem=$_GET['w'];
-			$ann=date('Y');
+			if($sem[0]!="0" && $sem<10 && $sem>0)
+			{
+				$sem="0".$sem;
+			}
+			$ann=$_GET['ann'];
 			$tab=sql("SELECT reservations.id,titre,login,debut,fin FROM `reservations`INNER JOIN utilisateurs on reservations.id_user=utilisateurs.id WHERE (DATE_FORMAT(debut,'%u')='".$sem."'and DATE_FORMAT(debut,'%Y')='".$ann."' )or (DATE_FORMAT(fin,'%u')='".$sem."' and DATE_FORMAT(fin,'%Y')='".$ann."') ORDER BY `debut` ");
 			$wav=$_GET['w']-1;
+			$annav=$ann;
+			if($wav<=0)
+			{
+				$wav=52;
+				$annav--;
+			}
 			$wap=$_GET['w']+1;
-			$moi=date('F');
-			echo "<h1>Semaine :".$sem." de l'année ".$ann."  ".$moi."</h1>";
+			$annap=$ann;
+			if ($wap>=53) 
+			{
+				$wap=1;
+				$annap++;
+			}
+			echo "<h1>Semaine n°".$sem." de l'année ".$ann."</h1>";
 		}
 
 	?>
@@ -87,8 +104,8 @@
 
 	<div class="tableaureservation">
 
-	<a href="planning.php?w=<?php echo $wav ?>">Semaine précédente</a>
-	<a href="planning.php?w=<?php echo $wap ?>">Semaine suivante</a>
+	<a href="planning.php?w=<?php echo $wav ?>&ann=<?php echo $annav ?>">Semaine précédente</a>
+	<a href="planning.php?w=<?php echo $wap ?>&ann=<?php echo $annap ?>">Semaine suivante</a>
 </div>
 </table>
 </main>
