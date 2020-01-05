@@ -16,18 +16,18 @@ nav {
 a {
   text-decoration: none;
   color: black;
-  border-radius: 23px 1100px 110px;
+  transition: color 1s ;
+
 }
 
 a:hover {
-  border-color: black;
-  background-color:rgba(161, 38, 9, 0.73);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  cursor: url('move.cur') , auto;
 
 }
 
 html, nav, tr, td, th {
-  cursor: url('/reservation/cursor.cur'), auto;
+  cursor: url('cursor.cur'), auto;
   font-family: 'Russo One', sans-serif;
   font-family: 'Bangers', cursive;
   font-family: 'Press Start 2P', cursive;
@@ -225,6 +225,7 @@ box-shadow: 5px 5px 5px black;
 .flexr {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 
@@ -237,22 +238,44 @@ box-shadow: 5px 5px 5px black;
   background-attachment: fixed;
 }
 
-.tableaureservation{
+#choixsem
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+}
 
+td,th
+{ 
+  background-color: rgba(217, 170, 170, 0.5);
+  width: 200px;
+  height: 100px;
+  padding: 0;
+}
+
+th
+{
+  background: linear-gradient(rgba(255, 0, 0, 0.64), rgba(0, 201, 255, 0.55));
+}
+.pris
+{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  background-color: #e8181896;
 }
-.tableaureservation, tr, td, th{
-display: flex;
-justify-content: space-around;
-width: 96%;
-  font-size: 10px;
-  border-color: black;
-  border-style: solid;
-  background-color: rgba(217, 170, 170, 0.5);
-  border-radius: 5px;
+
+.vide
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
+
 #tableaureservationgeneral{
   margin:0;
 }
@@ -264,15 +287,6 @@ width: 96%;
 
 }
 
- td{
-   height: 90px;
- }
-
-tbody{
-  width: 100%;
-
-
-}
 .heur{
   color: white;
 }
@@ -291,10 +305,12 @@ tbody{
 #changementdepseudo{
   font-size: 13px;
   background-color:white;
-  margin: 15%;
+  margin: auto;
+  margin-top: 10%; 
   padding: 3%;
   background-color: rgba(255, 255, 255, 0.55);
   border-radius: 150px;
+  width: 40%;
   animation: pseu 0.5s;
 
 }
@@ -328,12 +344,12 @@ tbody{
   justify-content: center;
   font-size: 10px;
   background-color:white;
-  margin: 100px;
-  margin-left: 300px;
-border-radius: 40px;
+  border-radius: 40px;
   padding: 40px;
   background-color: rgba(255, 255, 255, 0.55);
   width: 60%;
+  margin: auto;
+  margin-top: 10%;
 }
 
 .align1{

@@ -68,8 +68,8 @@ if(isset($_POST['res']))
 		<form action="reservation-form.php" method="post">
 			<div class="reservationform"><label>Titre :</label><input type="text" name="titre" required>
 			<label>Description :</label><textarea  name="desc" ></textarea>
-			<label>Date</label><input type="date" name="jour"><label>heure de début</label><input type="number" name="debheur" min="8" max="18"><label>h</label>
-			<label>Heure de fin</label><input type="number" name="finheur" min="9" max="19"><label>h</label>
+			<label>Date</label><input type="date" name="jour"><label>heure de début</label><input type="number" name="debheur" min="8" max="18">
+			<label>Heure de fin</label><input type="number" name="finheur" min="9" max="19">
 			<input class="buttonOK" type="submit" name="res">
 		</div>
 		</form>

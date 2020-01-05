@@ -49,7 +49,7 @@
 
 	?>
 
-	<table class='tableaureservation'>
+	<table class='tableaureservation' style="border-spacing: 5px 5px;">
 		<tr>
 			<th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th>
 		</tr>
@@ -102,12 +102,12 @@
 				</tr>
 		<?php } ?>
 
-	<div class="tableaureservation">
-
+	
+</table>
+<div class="tableaureservation" id="choixsem">
 	<a href="planning.php?w=<?php echo $wav ?>&ann=<?php echo $annav ?>">Semaine précédente</a>
 	<a href="planning.php?w=<?php echo $wap ?>&ann=<?php echo $annap ?>">Semaine suivante</a>
 </div>
-</table>
 </main>
 	<?php include('footer.php') ?>
 </body>
