@@ -75,6 +75,7 @@ body{
 .photoindex0 {
   height: 205px;
   width: auto;
+  margin-left: 5%;
   animation: entree 2s;
 }
 
@@ -121,8 +122,6 @@ body{
 }
 
 #h1index {
-  display: flex;
-  flex-direction: row;
   background: linear-gradient(rgba(255, 0, 0, 0.64), rgba(0, 201, 255, 0.55));
   color: white;
   font-family: 'Press Start 2P', cursive;
@@ -131,6 +130,7 @@ body{
   padding: 2%;
   box-shadow: 5px 5px 5px black;
   animation: fondu 5s;
+  text-align: center;
 }
 
 
